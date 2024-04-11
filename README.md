@@ -1,9 +1,8 @@
-# eCCA-scRNAseq-2024
-# ZIP1+ fibroblasts interconnect lung cancer cells via upregulating connexin-43 and promote chemoresistance by Zn2+ transfer.(Ni C, Lou X, Yao X, et al.2022)
+# Single-cell transcriptomic analysis identifies prognosis-related stromal signatures that potentiate stratification of extrahepatic cholangiocarcinoma. (Chen Ni, Rulin Hua, Dekang Lv, et al.2024)
 
 ## **Link**
 
-## Please cite : Ni C, et al., ZIP1+ fibroblasts interconnect lung cancer cells via upregulating connexin-43 and promote chemoresistance by Zn2+ transfer. (2022) <br/>
+## Please cite : Chen Ni, et al., Single-cell transcriptomic analysis identifies prognosis-related stromal signatures that potentiate stratification of extrahepatic cholangiocarcinoma. (2024) <br/>
 
 # Brief Descriptions of scRNA Analysis Scripts
 
