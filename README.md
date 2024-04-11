@@ -17,7 +17,7 @@
 
 # Raw Data Download
 
-### GSA Accession : CRA004556 https://ngdc.cncb.ac.cn/gsa/browse/CRA004556 <br/>
+### GSA Accession : HRA004578, HRA004577
 
 
 ## Notes
