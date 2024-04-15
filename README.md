@@ -6,13 +6,13 @@
 
 # Brief Descriptions of scRNA Analysis Scripts
 
-**scRNA_01_integration_clustering** - Script for reading in 10x raw count matrix, integrating datasets, dimension reduction and cell clustering.
+**scRNA_M1** - Script for reading in 10x raw count matrix, quality control, integrating datasets, dimension reduction, cell clustering and annotating major cell types.
 
-**scRNA_02_marker** - Script for identifying markers and compute functional profiles of each cluster.
+**scRNA_M2** - Script for subclustering cells, identifying markers and computing functional profiles of cell clusters.
 
-**scRNA_03_enrichment** - Script for pathway activity estimation and Gene Ontology enrichment analysis.
+**scRNA_M3** - Script for cell-cell communication, SCENIC and trajectory analysis.
 
-**scRNA_04_RNAvelocity** - Script for RNA velocity analysis.
+**scRNA_M4** - Script for RNA-seq Survival Analysis and Patient Stratification for ECCA.
 
 
 # Raw Data Download
