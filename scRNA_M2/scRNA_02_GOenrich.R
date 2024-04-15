@@ -52,10 +52,10 @@ enrichment<-function(pathIDVsEntrezID,deg.symbol,low=10,high=500){
     refset=x
     overlap <- intersect(geneset,refset)
     overlap.entrez <-paste(overlap,collapse = ",")
-    k <- length(overlap)# 差异基因中属于hsa pathway的基因个数-1
-    M <- length(refset)# 在背景基因下 hsa pathway的基因个数
-    N <- length(AllKEGG.EntrezID) # 背景基因个数
-    n <- length(geneset)# 差异基因个数
+    k <- length(overlap)
+    M <- length(refset)
+    N <- length(AllKEGG.EntrezID) 
+    n <- length(geneset)
     pvalues <-  phyper(k - 1, M, N - M, n, lower.tail = FALSE)
     fold<- (k/n)/(M/N)
     c(N,M,n,k,fold,pvalues)
