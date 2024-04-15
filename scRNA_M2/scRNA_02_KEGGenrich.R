@@ -1,9 +1,6 @@
 #!/usr/bin/env Rscript
 options(warn=-1)
-#USAGE:Rscript cmdfile <参考文件>,<差异基因symbol向量RDS文件>,Rscript KEGGenrich.R deg.RDS
-#功能：超几何分布筛选富集KEGG通路
-#input：<差异基因symbol向量RDS文件>向量
-#output：exel文件包含两个表,一个是显著富集的结果,另一个是所有检验结果，可以根据需要重新设置差异阈值
+#USAGE:Rscript cmdfile <gene symbol RDS file>,Rscript KEGGenrich.R deg.RDS
 
 Args<-commandArgs()
 refdir <- dirname(strsplit( Args[4], split="=" )[[1]][2])
@@ -13,7 +10,7 @@ degfile <- Args[6]
 print(degfile)
 load(reffile)
 deg=readRDS(degfile)
-#基于超几何分布的富集函数
+
 enrichment<-function(pathIDVsEntrezID,deg.symbol,low=10,high=500){
   IDtrans<-function(symbol){
     library(org.Hs.eg.db)
@@ -36,10 +33,10 @@ enrichment<-function(pathIDVsEntrezID,deg.symbol,low=10,high=500){
     refset=x
     overlap <- intersect(geneset,refset)
     overlap.entrez <-paste(overlap,collapse = ",")
-    k <- length(overlap)# 差异基因中属于hsa pathway的基因个数-1
-    M <- length(refset)# 在背景基因下 hsa pathway的基因个数
-    N <- length(AllKEGG.EntrezID) # 背景基因个数
-    n <- length(geneset)# 差异基因个数
+    k <- length(overlap)
+    M <- length(refset)
+    N <- length(AllKEGG.EntrezID) 
+    n <- length(geneset)
     pvalues <-  phyper(k - 1, M, N - M, n, lower.tail = FALSE)
     fold<- (k/n)/(M/N)
     c(N,M,n,k,fold,pvalues)
@@ -67,7 +64,6 @@ enrichment<-function(pathIDVsEntrezID,deg.symbol,low=10,high=500){
   res.df
 }
 
-#基于超几何分布的KEGG富集函数
 enrich_KEGG<-function(KEGGpathIDVsEntrezID,deg.symbol,pathid2name){
   enrichment<-enrichment(KEGGpathIDVsEntrezID,deg.symbol)
   enrichment$Functional.Pathway <- pathid2name[rownames(enrichment)]
