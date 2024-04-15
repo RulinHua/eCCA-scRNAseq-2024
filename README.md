@@ -12,7 +12,7 @@
 
 **scRNA_M3** - Script for cell-cell communication, SCENIC and trajectory analysis.
 
-**scRNA_M4** - Script for RNA-seq Survival Analysis and Patient Stratification for ECCA.
+**scRNA_M4** - Script for RNA-seq Survival Analysis and Patient Stratification for eCCA.
 
 
 # Raw Data Download
