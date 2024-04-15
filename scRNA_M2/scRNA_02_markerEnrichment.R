@@ -1,10 +1,6 @@
 #!/usr/bin/env Rscript
 options(warn=-1)
-#USAGE:Rscript cmdfile <包含marker的数据框RDS>
-#功能：所有类的marker基因进行功能富集分析
-#input：包含marker的数据框,至少包含gene和cluster两列
-#output：
-
+#USAGE:Rscript cmdfile <dataframe for markers RDS file>
 
 Args<-commandArgs()
 print(Args)
@@ -17,7 +13,6 @@ savePath=paste0(pwd,"/M4markerEnrichment_",gsub("\\..*","",basename(Args[6])))
 if(!dir.exists(savePath)){
   dir.create(savePath,recursive = T)
 }
-#将结果保存文件夹设置为工作目录
 setwd(savePath)
 
 for(clust in unique(markerdf$cluster)){
