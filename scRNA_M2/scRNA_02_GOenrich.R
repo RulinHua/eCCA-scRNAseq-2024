@@ -2,10 +2,7 @@
 options(warn=-1)
 #12/30/20
 #Created by Dekang Lv
-#USAGE:Rscript cmdfile <差异基因symbol向量RDS文件>,Rscript GOenrich.R deg.RDS
-#功能：超几何分布筛选富集GO term
-#input：<差异基因symbol向量RDS文件>向量
-#output：exel文件包含两个表,一个是显著富集的结果,另一个是所有检验结果，可以根据需要重新设置差异阈值
+#USAGE:Rscript cmdfile <gene symbol RDS file>,Rscript GOenrich.R deg.RDS
 
 Args<-commandArgs(T)
 degfile <- Args[1]
