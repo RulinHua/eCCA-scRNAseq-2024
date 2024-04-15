@@ -11,7 +11,6 @@ dt_markers <- readRDS("/SATA/rlhua/project/eCCA/markers/markers_Fibroblasts/clus
 
 ## clinical information
 sample_info <- fread("/SATA/rlhua/project/eCCA/bulkRNAseq/sample_info.tsv",sep = "\t",header = T)
-colnames(sample_info) <- c("sample","time","status","type","histology","sample_name","Neural_Invasion","age","gender","tumor_size","differentiation","relapse","clinical_stage","lymph_node_metastasis","distant_metastasis")
 sample_info$status <- ifelse(sample_info$status=="Alive",0,1)
 sample_info <- sample_info[sample_name!=""]
 
